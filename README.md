@@ -3,5 +3,5 @@
 
 ## Install
 ```
-asdf plugin-add terraformer https://github.com/grimoh/asdf-terraformer.git
+asdf plugin add terraformer https://github.com/grimoh/asdf-terraformer.git
 ```
