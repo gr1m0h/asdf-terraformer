@@ -12,12 +12,12 @@ cd "${downloadPath}"
 
 case "$(uname -s)" in
 	"Darwin")
-		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-darwin-amd64"
+		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-darwin-amd64"
 		curl -fL -o "${downloadPath}/terraformer" "${DOWNLOAD_URL}"
 		mv ./terraformer "${toolPath}"
 		;;
 	"Linux")
-		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-linux-amd64"
+		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-linux-amd64"
 		curl -fL -o "${downloadPath}/terraformer" "${DOWNLOAD_URL}"
 		mv ./terraformer "${toolPath}"
 		;;
