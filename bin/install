@@ -4,24 +4,11 @@ set -e
 # check ASDF environment variables
 [ -n "$ASDF_INSTALL_VERSION" ] || (echo 'Missing ASDF_INSTALL_VERSION' >&2 && exit 1)
 [ -n "$ASDF_INSTALL_PATH" ] || (echo 'Missing ASDF_INSTALL_PATH' >&2 && exit 1)
+[ -n "$ASDF_DOWNLOAD_PATH" ] || (echo 'Missing ASDF_DOWNLOAD_PATH' >&2 && exit 1)
 
 mkdir -p "${ASDF_INSTALL_PATH}/bin"
 toolPath="${ASDF_INSTALL_PATH}/bin/terraformer"
-downloadPath="$(mktemp -d)"
-cd "${downloadPath}"
 
-case "$(uname -s)" in
-	"Darwin")
-		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-darwin-amd64"
-		curl -fL -o "${downloadPath}/terraformer" "${DOWNLOAD_URL}"
-		mv ./terraformer "${toolPath}"
-		;;
-	"Linux")
-		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-linux-amd64"
-		curl -fL -o "${downloadPath}/terraformer" "${DOWNLOAD_URL}"
-		mv ./terraformer "${toolPath}"
-		;;
-esac
-
+cd "${ASDF_DOWNLOAD_PATH}"
+mv ./terraformer "${toolPath}"
 chmod +x "${toolPath}"
-rm -rf "${downloadPath}"
