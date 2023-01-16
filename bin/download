@@ -5,12 +5,18 @@ set -e
 [ -n "$ASDF_INSTALL_VERSION" ] || (echo 'Missing ASDF_INSTALL_VERSION' >&2 && exit 1)
 [ -n "$ASDF_DOWNLOAD_PATH" ] || (echo 'Missing ASDF_DOWNLOAD_PATH' >&2 && exit 1)
 
-case "$(uname -s)" in
-	"Darwin")
+case "$(uname -o)|$(uname -m)" in
+	"Darwin|amd64")
 		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-darwin-amd64"
 		;;
-	"Linux")
+	"Darwin|arm64")
+		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-darwin-arm64"
+		;;
+	"Linux|amd64")
 		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-linux-amd64"
+		;;
+	"Linux|arm64")
+		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-linux-arm64"
 		;;
 esac
 
