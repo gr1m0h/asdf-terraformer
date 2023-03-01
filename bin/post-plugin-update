@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+set -e
+
+# advise user of the next steps to ensure they can use the terraformer tool
+echo "Please ensure you also set up the Terraform plugin directory"
+echo "See the instructions here, from Step 4 onwards"
+echo "https://github.com/GoogleCloudPlatform/terraformer#installation"
