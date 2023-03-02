@@ -1,4 +1,7 @@
+![GitHub Actions Status](https://github.com/grimoh/asdf-terraformer/workflows/Build/badge.svg?branch=main)
+
 # asdf-terraformer
+
 [terraformer](https://github.com/GoogleCloudPlatform/terraformer) plugin for [asdf](https://github.com/asdf-vm/asdf) version manager
 
 ## Installation
