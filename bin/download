@@ -9,6 +9,9 @@ case "$(uname -s)|$(uname -m)" in
 	"Darwin|amd64")
 		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-darwin-amd64"
 		;;
+	"Darwin|x86_64")
+		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-darwin-amd64"
+		;;
 	"Darwin|arm64")
 		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-darwin-arm64"
 		;;
