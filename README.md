@@ -9,7 +9,7 @@
 Install the plugin:
 
 ```
-asdf plugin add terraformer https://github.com/grimoh/asdf-terraformer.git
+asdf plugin add terraformer
 ```
 
 Please ensure you also set up the Terraform plugin directory:
