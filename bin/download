@@ -21,7 +21,7 @@ case "$(uname -s)|$(uname -m)" in
 	"Linux|x86_64")
 		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-linux-amd64"
 		;;
-	"Linux|arm64")
+	"Linux|arm64"|"Linux|aarch64")
 		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-linux-arm64"
 		;;
 esac
