@@ -6,24 +6,24 @@ set -e
 [ -n "$ASDF_DOWNLOAD_PATH" ] || (echo 'Missing ASDF_DOWNLOAD_PATH' >&2 && exit 1)
 
 case "$(uname -s)|$(uname -m)" in
-	"Darwin|amd64")
-		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-darwin-amd64"
-		;;
-	"Darwin|x86_64")
-		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-darwin-amd64"
-		;;
-	"Darwin|arm64")
-		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-darwin-arm64"
-		;;
-	"Linux|amd64")
-		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-linux-amd64"
-		;;
-	"Linux|x86_64")
-		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-linux-amd64"
-		;;
-	"Linux|arm64"|"Linux|aarch64")
-		DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-linux-arm64"
-		;;
+"Darwin|amd64")
+	DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-darwin-amd64"
+	;;
+"Darwin|x86_64")
+	DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-darwin-amd64"
+	;;
+"Darwin|arm64")
+	DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-darwin-arm64"
+	;;
+"Linux|amd64")
+	DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-linux-amd64"
+	;;
+"Linux|x86_64")
+	DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-linux-amd64"
+	;;
+"Linux|arm64" | "Linux|aarch64")
+	DOWNLOAD_URL="https://github.com/GoogleCloudPlatform/terraformer/releases/download/${ASDF_INSTALL_VERSION}/terraformer-all-linux-arm64"
+	;;
 esac
 
 curl -fL -o "${ASDF_DOWNLOAD_PATH}/terraformer" "${DOWNLOAD_URL}"
